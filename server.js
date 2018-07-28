@@ -15,7 +15,12 @@ app.use(bodyParser.json());
 
 // Star Wars Characters (DATA)
 // =============================================================
-var tables = [];
+var tables = [{
+  customerName: "Shane",
+  phoneNumber: "480-867-5309",
+  customerEmail: "shane@awesome.com",
+  customerID: "888890"
+}];
 
 // Routes
 // =============================================================
@@ -39,6 +44,12 @@ app.post("/api/tables", function(req, res) {
   tables.push(req.body);
 
 });
+
+app.get("/api/tables", function(req,res) {
+
+  res.json(tables);
+});
+
 
 // Displays a single character, or returns false
 /* app.get("/api/characters/:character", function(req, res) {
