@@ -53,8 +53,12 @@ app.get("/tables", function(req, res) {
 
 app.post("/api/tables", function(req, res) {
 
-  tables.push(req.body);
-
+  if (tables.length > 5) {
+    waitListArray.push(req.body); 
+  } 
+  else {
+    tables.push(req.body);
+  }
 });
 
 app.get("/api/tables", function(req,res) {
