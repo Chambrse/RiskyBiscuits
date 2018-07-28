@@ -70,6 +70,12 @@ app.get("/api/waitlist/", function (req, res){
   res.json(waitListArray);
 });
 
+app.post("/api/clear/", function (req, res){
+  tables = []
+  waitListArray = []
+});
+
+
 // Displays a single character, or returns false
 /* app.get("/api/characters/:character", function(req, res) {
   var chosen = req.params.character;
