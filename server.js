@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 // Star Wars Characters (DATA)
 // =============================================================
-var characters = [];
+var tables = [];
 
 // Routes
 // =============================================================
@@ -25,7 +25,7 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/reservation", function(req, res) {
+app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
@@ -34,8 +34,14 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.post("/api/tables", function(req, res) {
+
+  tables.push(req.body);
+
+});
+
 // Displays a single character, or returns false
-app.get("/api/characters/:character", function(req, res) {
+/* app.get("/api/characters/:character", function(req, res) {
   var chosen = req.params.character;
 
   console.log(chosen);
@@ -47,9 +53,9 @@ app.get("/api/characters/:character", function(req, res) {
   }
 
   return res.json(false);
-});
+}); */
 
-// Create New Characters - takes in JSON input
+/* // Create New Characters - takes in JSON input
 app.post("/api/characters", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body-parser middleware
@@ -64,7 +70,7 @@ app.post("/api/characters", function(req, res) {
   characters.push(newcharacter);
 
   res.json(newcharacter);
-});
+}); */
 
 // Starts the server to begin listening
 // =============================================================
