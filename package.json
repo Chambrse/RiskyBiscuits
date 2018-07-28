@@ -1,5 +1,5 @@
 {
-  "name": "RiskyBiscuits",
+  "name": "riskybiscuits",
   "version": "1.0.0",
   "description": "A website for making and storing reservations at our restaurant, risky biscuits.",
   "main": "server.js",

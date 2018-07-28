@@ -21,9 +21,21 @@ var tables = [{
   customerEmail: "shane@awesome.com",
   customerID: "888890"
 }];
-
+var waitListArray = [{
+  customerName: "Goku",
+  phoneNumber: "480-867-5309",
+  customerEmail: "goku@awesome.com",
+  customerID: "826890"
+},
+{
+  customerName: "sinrone",
+  phoneNumber: "480-867-5309",
+  customerEmail: "sinrone@awesome.com",
+  customerID: "887890"
+}];
 // Routes
 // =============================================================
+
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
@@ -50,6 +62,9 @@ app.get("/api/tables", function(req,res) {
   res.json(tables);
 });
 
+app.get("/api/waitlist/", function (req, res){
+  res.json(waitListArray);
+});
 
 // Displays a single character, or returns false
 /* app.get("/api/characters/:character", function(req, res) {
